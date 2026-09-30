@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello World!</title>
+  <meta name="description" content="Página de prueba publicada en Cloudflare Pages.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --text: #1b1b23;
+      --muted: #6b6b7b;
+      --accent: #f38020; /* naranjo Cloudflare */
+      --card: #ffffff;
+      --border: #e6e6ef;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111116;
+        --text: #f2f2f7;
+        --muted: #a0a0b0;
+        --card: #1a1a22;
+        --border: #2a2a36;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    main {
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .06);
+    }
+    .wave { font-size: 56px; display: inline-block; animation: wave 2.4s ease-in-out infinite; transform-origin: 70% 70%; }
+    @keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(14deg); } 20% { transform: rotate(-8deg); } }
+    @media (prefers-reduced-motion: reduce) { .wave { animation: none; } }
+    h1 { font-size: clamp(36px, 8vw, 56px); margin: 12px 0 8px; letter-spacing: -0.02em; }
+    p { margin: 0; color: var(--muted); }
+    .badge {
+      display: inline-block; margin-top: 20px; padding: 6px 14px; border-radius: 999px;
+      background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent);
+      font-weight: 600; font-size: 14px;
+    }
+    .time { margin-top: 18px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="wave" aria-hidden="true">👋</span>
+    <h1>Hello World!</h1>
+    <p>Mi primera página publicada en internet.</p>
+    <span class="badge">Publicado en Cloudflare Pages</span>
+    <p class="time" id="time"></p>
+  </main>
+  <script>
+    document.getElementById('time').textContent =
+      'Cargada el ' + new Date().toLocaleString('es', { dateStyle: 'long', timeStyle: 'short' });
+  </script>
+</body>
+</html>
