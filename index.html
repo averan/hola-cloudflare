@@ -70,6 +70,22 @@
     document.getElementById('time').textContent =
       'Cargada el ' + new Date().toLocaleString('es', { dateStyle: 'long', timeStyle: 'short' });
   </script>
-<script src="https://web-vercel-zeta-red.vercel.app/embed.js" defer></script>
+  <!-- Asistente de IA local: lo que sabe y cómo responde está en el servidor (sitios/local-ia.andres-veran.workers.dev.md) -->
+  <script>
+    window.FAENA_BOT = {
+      assistantName: 'IA Local',
+      modelLabel: 'Asistente IA Local',
+      avatar: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='8' y='.85em' font-size='80'>🤖</text></svg>",
+      greeting: '¡Hola! 👋 Soy un asistente de IA que funciona en un computador local, sin nube. ¿Quieres ver qué puede hacer la IA local por tu empresa?',
+      suggestions: ['¿Qué es la IA local?', '¿Qué soluciones puedo probar?', 'Quiero agendar un Meet'],
+      // basta con un medio de contacto: correo, teléfono/WhatsApp u otro
+      contactRequired: ['necesidad'],
+      contactAnyOf: ['correo', 'telefono', 'otro'],
+      contactConfirmation: '¡Gracias! Te contactaremos por {contacto} para coordinar la llamada o el Meet.',
+      unavailableMessage: 'En este momento el asistente está apagado (corre en un computador local 😉). Vuelve a intentarlo más tarde.',
+      footnote: 'IA que corre en un computador local · puede cometer errores'
+    };
+  </script>
+  <script src="https://web-vercel-zeta-red.vercel.app/embed.js" defer></script>
 </body>
 </html>
